@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ireland — September 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a2e1a;
+    --green-mid: #2d4a2d;
+    --green-soft: #4a7c4a;
+    --green-pale: #a8c5a0;
+    --cream: #f5f0e8;
+    --cream-dark: #e8e0d0;
+    --gold: #c4973a;
+    --gold-light: #e8c87a;
+    --stone: #8a7a6a;
+    --text-dark: #1a1a14;
+    --text-mid: #3a3a2a;
+    --text-light: #6a6a5a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--green-deep);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 20% 80%, rgba(74,124,74,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 80% 20%, rgba(196,151,58,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 80% 40% at 50% 100%, rgba(45,74,45,0.4) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a7c4a' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .hero-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(64px, 10vw, 130px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.35s forwards;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green-pale);
+  }
+
+  .hero-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream-dark);
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.5s forwards;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 32px auto;
+    opacity: 0;
+    animation: fadeIn 1s 0.7s forwards;
+  }
+
+  .hero-summary {
+    max-width: 520px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--green-pale);
+    line-height: 1.75;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.8s forwards;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s 1.4s forwards;
+    color: var(--stone);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(to bottom, var(--stone), transparent);
+    animation: scrollPulse 2s 1.4s infinite;
+  }
+
+  /* ── NAV PILLS ── */
+  .nav-pills {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245,240,232,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-pills::-webkit-scrollbar { display: none; }
+
+  .nav-pill {
+    padding: 16px 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .nav-pill:hover, .nav-pill.active {
+    color: var(--green-deep);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ── OVERVIEW STRIP ── */
+  .overview-strip {
+    background: var(--green-mid);
+    padding: 48px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background-color: rgba(74,124,74,0.3);
+  }
+
+  .overview-item {
+    background: var(--green-mid);
+    padding: 32px 28px;
+    text-align: center;
+  }
+
+  .overview-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .overview-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-pale);
+    margin-top: 8px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--green-deep);
+    line-height: 1.1;
+  }
+
+  /* ── DAY CARDS ── */
+  .days-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 56px;
+  }
+
+  .day-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    border-top: 1px solid var(--cream-dark);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+
+  .day-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .day-card:last-child {
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .day-number {
+    padding: 36px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    border-right: 1px solid var(--cream-dark);
+    padding-right: 28px;
+  }
+
+  .day-num-big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--green-pale);
+    line-height: 1;
+  }
+
+  .day-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  .day-date {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 4px;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .day-content {
+    padding: 36px 0 36px 36px;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .day-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.2;
+    flex: 1;
+  }
+
+  .day-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .tag-hike { background: rgba(74,124,74,0.12); color: var(--green-soft); }
+  .tag-food { background: rgba(196,151,58,0.12); color: var(--gold); }
+  .tag-drive { background: rgba(138,122,106,0.12); color: var(--stone); }
+  .tag-city { background: rgba(26,46,26,0.08); color: var(--green-mid); }
+  .tag-wedding { background: rgba(196,151,58,0.2); color: #8a5a0a; }
+
+  .day-description {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-mid);
+    margin-bottom: 24px;
+  }
+
+  .stops {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  .stop {
+    display: grid;
+    grid-template-columns: 12px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--cream-dark);
+    align-items: start;
+  }
+
+  .stop:last-child { border-bottom: none; }
+
+  .stop-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .stop-body {}
+
+  .stop-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+  }
+
+  .stop-detail {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .day-stay {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 16px 20px;
+    border-radius: 3px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 8px;
+  }
+
+  .stay-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  .stay-content {}
+
+  .stay-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-pale);
+    margin-bottom: 4px;
+  }
+
+  .stay-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--cream-dark);
+    line-height: 1.5;
+  }
+
+  /* ── FOOD SECTION ── */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .food-card {
+    background: white;
+    border: 1px solid var(--cream-dark);
+    padding: 24px;
+    position: relative;
+  }
+
+  .food-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+
+  .food-location {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 8px;
+  }
+
+  .food-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .food-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  .food-type {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-light);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  /* ── HIKES SECTION ── */
+  .hikes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--cream-dark);
+    margin-top: 40px;
+  }
+
+  .hike-card {
+    background: var(--cream);
+    padding: 28px;
+  }
+
+  .hike-location-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-soft);
+    margin-bottom: 10px;
+  }
+
+  .hike-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .hike-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .hike-meta-item {
+    font-size: 12px;
+    color: var(--stone);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hike-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  /* ── PRACTICAL ── */
+  .practical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .practical-card {
+    padding: 24px;
+    border-left: 3px solid var(--green-soft);
+    background: white;
+  }
+
+  .practical-icon { font-size: 24px; margin-bottom: 12px; }
+
+  .practical-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .practical-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  /* ── MAP CTA ── */
+  .map-cta {
+    background: var(--green-deep);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .map-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+
+  .map-cta p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--green-pale);
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .map-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .map-btn:hover { background: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--stone);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  footer strong {
+    color: var(--cream-dark);
+    font-weight: 500;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .day-card { grid-template-columns: 1fr; }
+    .day-number { border-right: none; border-bottom: 1px solid var(--cream-dark); padding-right: 0; padding-bottom: 16px; flex-direction: row; align-items: center; gap: 12px; }
+    .day-content { padding: 24px 0 0; }
+    .overview-strip { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-badge">A Proposed Itinerary · Four Travellers</div>
+  <h1><em>Ireland</em></h1>
+  <div class="hero-date">September 5 – 13, 2025</div>
+  <div class="hero-divider"></div>
+  <p class="hero-summary">Eight days. The Wild Atlantic Way from Galway to Kerry, with two nights in Connemara, a beloved foodie town, ancient cliff walks, and a wedding in Dublin to end it all.</p>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav-pills" id="mainNav">
+  <button class="nav-pill active" onclick="scrollToSection('overview')">Overview</button>
+  <button class="nav-pill" onclick="scrollToSection('itinerary')">Day by Day</button>
+  <button class="nav-pill" onclick="scrollToSection('food')">Food & Drink</button>
+  <button class="nav-pill" onclick="scrollToSection('hikes')">Hikes</button>
+  <button class="nav-pill" onclick="scrollToSection('practical')">Practical</button>
+</nav>
+
+<!-- OVERVIEW STRIP -->
+<div class="overview-strip" id="overview">
+  <div class="overview-item">
+    <div class="overview-num">8</div>
+    <div class="overview-label">Days</div>
+  </div>
+  <div class="overview-item">
+    <div class="overview-num">4</div>
+    <div class="overview-label">Travellers</div>
+  </div>
+  <div class="overview-item">
+    <div class="overview-num">5</div>
+    <div class="overview-label">Regions</div>
+  </div>
+  <div class="overview-item">
+    <div class="overview-num">4</div>
+    <div class="overview-label">Hikes</div>
+  </div>
+  <div class="overview-item">
+    <div class="overview-num">1</div>
+    <div class="overview-label">Wedding</div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<section class="section" id="itinerary">
+  <div class="section-label">The Plan</div>
+  <h2 class="section-title">Day by Day</h2>
+
+  <div class="days-grid">
+
+    <!-- DAY 1 -->
+    <div class="day-card">
+      <div class="day-number">
+        <div class="day-num-big">1</div>
+        <div class="day-label">Day One</div>
+        <div class="day-date">Fri, Sept 5</div>
+      </div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Dublin → Galway<br><small style="font-size:16px;color:var(--text-light)">Arrival & Drive West</small></div>
+          <div class="day-tags">
+            <span class="tag tag-drive">Drive</span>
+            <span class="tag tag-city">City</span>
+          </div>
+        </div>
+        <p class="day-description">Land at 6am, clear customs, grab a proper airport breakfast roll and coffee — a rite of Irish arrival. Pick up the rental car and drive straight west to Galway (2.5 hours). Arrive by 9:30am, drop bags at the hotel, and start exploring. The Latin Quarter, Salthill Promenade, and the weekend market await.</p>
+        <div class="stops">
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Dublin Airport → Galway</div>
+              <div class="stop-detail">~2.5 hours on the M6. Straight west through the midlands with the morning sun behind you.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Salthill Promenade</div>
+              <div class="stop-detail">A 2km seafront walk along Galway Bay with views toward the Aran Islands and the Burren. The traditional "kick the wall" at the end is non-negotiable.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Latin Quarter & Spanish Arch</div>
+              <div class="stop-detail">Medieval streets, excellent bookshops, artisan food stalls, and a genuinely vibrant independent scene. Tigh Neachtain pub for your first pint.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Evening: Traditional Music</div>
+              <div class="stop-detail">Monroe's Tavern or Tí Joe Mac's — live sessions in authentically atmospheric surroundings.</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-stay">
+          <div class="stay-icon">🏨</div>
+          <div class="stay-content">
+            <div class="stay-label">Stay in Galway</div>
+            <div class="stay-text"><strong>The House Hotel</strong> in the Latin Quarter (ideal location) or <strong>The g Hotel</strong> for a more design-forward boutique stay.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card">
+      <div class="day-number">
+        <div class="day-num-big">2</div>
+        <div class="day-label">Day Two</div>
+        <div class="day-date">Sat, Sept 6</div>
+      </div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Connemara + Cliffs of Moher</div>
+          <div class="day-tags">
+            <span class="tag tag-hike">Hike</span>
+            <span class="tag tag-drive">Drive</span>
+            <span class="tag tag-food">Food</span>
+          </div>
+        </div>
+        <p class="day-description">One of the finest days Ireland can offer. Drive north into Connemara for a morning mountain hike over bog and glacial lake, then sweep south to the most iconic cliffs in Europe for golden-hour views over the Atlantic.</p>
+        <div class="stops">
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Connemara National Park — Diamond Hill Loop</div>
+              <div class="stop-detail">7km moderate loop. Big panoramic views over the Twelve Bens, blanket bog, and the Atlantic. Allow 2.5–3 hours. Free entry.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Drive south to County Clare (~1.5 hrs)</div>
+              <div class="stop-detail">Through Galway and into the Burren landscape as you approach the coast.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Cliffs of Moher — Late Afternoon</div>
+              <div class="stop-detail">214m above the Atlantic. Walk south toward Hag's Head for the most dramatic, least-crowded section. Arrive after 3pm for softer light.</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-stay">
+          <div class="stay-icon">🏨</div>
+          <div class="stay-content">
+            <div class="stay-label">Stay in Doolin</div>
+            <div class="stay-text"><strong>Doolin Inn</strong> — charming village, 15 minutes from the Cliffs. Dinner at <strong>Gus O'Connor's Pub</strong>: legendary seafood chowder and live traditional music.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card">
+      <div class="day-number">
+        <div class="day-num-big">3</div>
+        <div class="day-label">Day Three</div>
+        <div class="day-date">Sun, Sept 7</div>
+      </div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">The Burren + Drive to Kerry</div>
+          <div class="day-tags">
+            <span class="tag tag-hike">Hike</span>
+            <span class="tag tag-drive">Drive</span>
+          </div>
+        </div>
+        <p class="day-description">Start the morning in one of Ireland's strangest, most beautiful landscapes — a vast limestone plateau scattered with ancient tombs and wildflowers found nowhere else on earth. Then make the scenic drive south into Kerry.</p>
+        <div class="stops">
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">The Burren — Mullaghmore Loop</div>
+              <div class="stop-detail">Eerie karst limestone, rare Arctic-Mediterranean wildflowers growing side by side, Iron Age forts. Deeply atmospheric. Poulnabrone Dolmen (5,500 years old) is a short detour.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Lunch: The Roadside Tavern, Lisdoonvarna</div>
+              <div class="stop-detail">Excellent pub food, local seafood, great atmosphere in a characterful Clare village.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Drive to Killarney (~2.5 hrs)</div>
+              <div class="stop-detail">Through Limerick and the Golden Vale. The landscape softens beautifully as you enter Kerry.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Evening: Ross Castle Walk</div>
+              <div class="stop-detail">A 15th-century castle on the shores of Lough Leane — magical at dusk.</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-stay">
+          <div class="stay-icon">🏨</div>
+          <div class="stay-content">
+            <div class="stay-label">Stay in Killarney</div>
+            <div class="stay-text"><strong>The Brehon</strong> (spa, great restaurant) or <strong>Aghadoe Heights</strong> for sweeping lake views. Dinner at <strong>Quinlan's Seafood Bar</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card">
+      <div class="day-number">
+        <div class="day-num-big">4</div>
+        <div class="day-label">Day Four</div>
+        <div class="day-date">Mon, Sept 8</div>
+      </div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Killarney National Park + Kenmare</div>
+          <div class="day-tags">
+            <span class="tag tag-hike">Hike</span>
+            <span class="tag tag-food">Food</span>
+          </div>
+        </div>
+        <p class="day-description">A morning in one of Ireland's most beautiful national parks, then lunch in Kenmare — a perfectly preserved market town often called Ireland's finest foodie destination.</p>
+        <div class="stops">
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Killarney National Park — Morning Hike</div>
+              <div class="stop-detail"><strong>Ambitious:</strong> Purple Mountain (4–5 hrs, summit views). <strong>Scenic moderate:</strong> Old Kenmare Road (10km through mountain passes). <strong>Easier:</strong> Torc Waterfall & Mangerton Valley.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Kenmare — Afternoon</div>
+              <div class="stop-detail">30 minutes south of Killarney. Beautiful market town at the head of the Kenmare River estuary, ringed by mountains. Wednesday market if timing aligns.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Lunch / Dinner: Mulcahy's Restaurant</div>
+              <div class="stop-detail">One of the best restaurants in Kerry. Local produce elevated with real finesse.</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-stay">
+          <div class="stay-icon">🏨</div>
+          <div class="stay-content">
+            <div class="stay-label">Stay in Kenmare (or Killarney)</div>
+            <div class="stay-text">Consider <strong>Sheen Falls Lodge</strong> outside Kenmare for a special night — one of the great Irish country house hotels with a Michelin-starred restaurant.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-card">
+      <div class="day-number">
+        <div class="day-num-big">5</div>
+        <div class="day-label">Day Five</div>
+        <div class="day-date">Tue, Sept 9</div>
+      </div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Dingle Peninsula + Return to Dublin</div>
+          <div class="day-tags">
+            <span class="tag tag-drive">Drive</span>
+            <span class="tag tag-food">Food</span>
+            <span class="tag tag-city">Dublin</span>
+          </div>
+        </div>
+        <p class="day-description">An early start for the Dingle Peninsula — one of the most extraordinary coastal drives in Europe — before returning the car and settling into Dublin ahead of the wedding weekend.</p>
+        <div class="stops">
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Slea Head Drive</div>
+              <div class="stop-detail">A 50km coastal loop from Dingle town. Ancient clocháns (beehive huts from early Christian monks), views of the Blasket Islands, dramatic sea stacks. Allow 3–4 hours including stops.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Lunch in Dingle Town</div>
+              <div class="stop-detail"><strong>Out of the Blue</strong> — seafood-only, no menu, just the morning's catch. One of Ireland's best lunches. Follow with Murphy's Ice Cream on Strand Street.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Drive to Dublin (~3.5–4 hrs)</div>
+              <div class="stop-detail">Return the rental car. Check into wedding hotel. An easy dinner at Bastible or Clanbrassil House before the festivities begin.</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-stay">
+          <div class="stay-icon">🏨</div>
+          <div class="stay-content">
+            <div class="stay-label">Check into Wedding Hotel, Dublin</div>
+            <div class="stay-text">Car returned. Wedding events begin Thursday — Wednesday is a gentle recovery day to explore Dublin at leisure.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAYS 6–8 -->
+    <div class="day-card">
+      <div class="day-number">
+        <div class="day-num-big">6–8</div>
+        <div class="day-label">Days Six–Eight</div>
+        <div class="day-date">Wed–Sat, 10–13</div>
+      </div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Dublin — The Wedding</div>
+          <div class="day-tags">
+            <span class="tag tag-wedding">Wedding</span>
+            <span class="tag tag-city">Dublin</span>
+            <span class="tag tag-food">Food</span>
+          </div>
+        </div>
+        <p class="day-description">Three days of celebration in Dublin, with time between events to enjoy one of Europe's finest small capitals. Fly out Sunday the 13th at 1pm.</p>
+        <div class="stops">
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Glasnevin Cemetery & Museum</div>
+              <div class="stop-detail">One of the most atmospheric and historically significant places in all of Ireland. Genuinely moving.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Whiskey Distillery Tours</div>
+              <div class="stop-detail">Teeling or Roe & Co distilleries — guided tastings of modern Irish whiskey in beautifully converted buildings.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Bewley's Oriental Café, Grafton Street</div>
+              <div class="stop-detail">Restored Art Deco café for a proper coffee and bun — a Dublin institution.</div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-dot"></div>
+            <div class="stop-body">
+              <div class="stop-name">Fly out Sunday, Sept 13 at 1pm</div>
+              <div class="stop-detail">Leave hotel by 10am. Dublin Airport is 30–40 minutes from the city centre.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOD SECTION -->
+<div style="background: var(--cream-dark); padding: 1px 0;">
+<section class="section" id="food">
+  <div class="section-label">For the Foodies</div>
+  <h2 class="section-title">Restaurants Worth Planning Around</h2>
+
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-location">Galway</div>
+      <div class="food-name">Aniar</div>
+      <div class="food-desc">Michelin-starred. Wild, seasonal, and hyperlocal Irish ingredients elevated into something genuinely extraordinary. One of Ireland's best restaurants. Book well in advance.</div>
+      <span class="food-type">Fine Dining</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Galway</div>
+      <div class="food-name">Ard Bia at Nimmos</div>
+      <div class="food-desc">Irish-Mediterranean in a medieval riverside warehouse. Wonderful atmosphere, excellent seasonal food. A more relaxed alternative to Aniar but no less memorable.</div>
+      <span class="food-type">Casual / Lunch</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Doolin, Co. Clare</div>
+      <div class="food-name">Gus O'Connor's Pub</div>
+      <div class="food-desc">Ireland's most famous traditional pub. Legendary seafood chowder, perfect Guinness, live music most nights. The kind of place you'll still be talking about years later.</div>
+      <span class="food-type">Pub / Seafood</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Kenmare, Kerry</div>
+      <div class="food-name">Mulcahy's Restaurant</div>
+      <div class="food-desc">The best restaurant in Kerry for many. Local produce with serious technique. The kind of cooking that makes a town worth planning a trip around.</div>
+      <span class="food-type">Contemporary Irish</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Kenmare, Kerry</div>
+      <div class="food-name">Sheen Falls Lodge</div>
+      <div class="food-desc">One of Ireland's great country house hotels. A Michelin-starred restaurant in a spectacular setting above a waterfall. Worth it for a special night.</div>
+      <span class="food-type">Luxury / Hotel Restaurant</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Dingle, Kerry</div>
+      <div class="food-name">Out of the Blue</div>
+      <div class="food-desc">Seafood only. No fixed menu — just whatever the boats brought in that morning. One of the purest and most exciting lunches in Ireland. Does not take reservations.</div>
+      <span class="food-type">Seafood Only</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Killarney, Kerry</div>
+      <div class="food-name">Quinlan's Seafood Bar</div>
+      <div class="food-desc">Outstanding local fish and shellfish, simply done well. Kerry seafood at its best — unpretentious and delicious.</div>
+      <span class="food-type">Seafood</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Dublin</div>
+      <div class="food-name">Bastible</div>
+      <div class="food-desc">A neighbourhood restaurant in Portobello that punches well above its weight. Wood-fire cooking, natural wines, smart but relaxed atmosphere.</div>
+      <span class="food-type">Contemporary Irish</span>
+    </div>
+    <div class="food-card">
+      <div class="food-location">Dublin</div>
+      <div class="food-name">Clanbrassil House</div>
+      <div class="food-desc">Wood-fire cooking, excellent atmosphere, one of Dublin's most loved dining rooms. Great for a group.</div>
+      <span class="food-type">Contemporary Irish</span>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- HIKES SECTION -->
+<section class="section" id="hikes">
+  <div class="section-label">For the Hikers</div>
+  <h2 class="section-title">Four Walks Worth Lacing Up For</h2>
+
+  <div class="hikes-grid">
+    <div class="hike-card">
+      <div class="hike-location-tag">Connemara, Day 2</div>
+      <div class="hike-name">Diamond Hill Loop</div>
+      <div class="hike-meta">
+        <span class="hike-meta-item">🥾 7km</span>
+        <span class="hike-meta-item">⏱ 2.5–3 hrs</span>
+        <span class="hike-meta-item">📊 Moderate</span>
+      </div>
+      <div class="hike-desc">The signature walk of Connemara National Park. Panoramic views over the Twelve Bens, Atlantic coast, and endless blanket bog. Well-marked from the visitor centre.</div>
+    </div>
+    <div class="hike-card">
+      <div class="hike-location-tag">The Burren, Day 3</div>
+      <div class="hike-name">Mullaghmore Loop</div>
+      <div class="hike-meta">
+        <span class="hike-meta-item">🥾 7km</span>
+        <span class="hike-meta-item">⏱ 2–3 hrs</span>
+        <span class="hike-meta-item">📊 Easy–Moderate</span>
+      </div>
+      <div class="hike-desc">Through the heart of the Burren's limestone karst. Otherworldly terrain, ancient forts, rare wildflowers, and extraordinary silence. Stop at Poulnabrone Dolmen nearby.</div>
+    </div>
+    <div class="hike-card">
+      <div class="hike-location-tag">Killarney, Day 4</div>
+      <div class="hike-name">Old Kenmare Road</div>
+      <div class="hike-meta">
+        <span class="hike-meta-item">🥾 10km</span>
+        <span class="hike-meta-item">⏱ 3–4 hrs</span>
+        <span class="hike-meta-item">📊 Moderate</span>
+      </div>
+      <div class="hike-desc">A beautiful historic route through the heart of the national park. Mountain passes, ancient oak woodland, the Lakes of Killarney below. One of Kerry's finest walks.</div>
+    </div>
+    <div class="hike-card">
+      <div class="hike-location-tag">Killarney, Day 4 (Alt)</div>
+      <div class="hike-name">Purple Mountain</div>
+      <div class="hike-meta">
+        <span class="hike-meta-item">🥾 12km</span>
+        <span class="hike-meta-item">⏱ 4–5 hrs</span>
+        <span class="hike-meta-item">📊 Challenging</span>
+      </div>
+      <div class="hike-desc">The more ambitious option. A summit hike above Killarney with exceptional 360° views over the lakes, MacGillycuddy's Reeks, and the Kerry coast on a clear day.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<div style="background: var(--cream-dark); padding: 1px 0;">
+<section class="section" id="practical">
+  <div class="section-label">Before You Go</div>
+  <h2 class="section-title">Practical Notes</h2>
+
+  <div class="practical-grid">
+    <div class="practical-card">
+      <div class="practical-icon">🚗</div>
+      <div class="practical-title">Driving</div>
+      <div class="practical-text">Left side of the road. Kerry and Connemara roads are narrow — go slow and enjoy it. Book an automatic if anyone isn't comfortable with manual left-hand drive. Budget for tolls on the M6 west from Dublin.</div>
+    </div>
+    <div class="practical-card">
+      <div class="practical-icon">🌦</div>
+      <div class="practical-title">September Weather</div>
+      <div class="practical-text">58–65°F. Expect some rain, possibly brilliant sunshine — often both in the same hour. Waterproof layers essential for hikes. September is one of the better months: crowds thin, light is beautiful.</div>
+    </div>
+    <div class="practical-card">
+      <div class="practical-icon">📅</div>
+      <div class="practical-title">Book in Advance</div>
+      <div class="practical-text">Aniar (Galway), Out of the Blue (Dingle), Sheen Falls Lodge, and Mulcahy's (Kenmare) all fill up weeks ahead in September. Book as soon as the itinerary is confirmed.</div>
+    </div>
+    <div class="practical-card">
+      <div class="practical-icon">🍺</div>
+      <div class="practical-title">Pubs</div>
+      <div class="practical-text">Irish pubs are welcoming for adults through the evening — no pressure to rush. Traditional music sessions often start around 9pm and run late. Doolin in particular is exceptional for this.</div>
+    </div>
+    <div class="practical-card">
+      <div class="practical-icon">💶</div>
+      <div class="practical-title">Currency & Payment</div>
+      <div class="practical-text">Euro. Cards accepted almost everywhere, but carry some cash for smaller pubs and market stalls. ATMs readily available in all towns.</div>
+    </div>
+    <div class="practical-card">
+      <div class="practical-icon">📍</div>
+      <div class="practical-title">Getting Around</div>
+      <div class="practical-text">Rental car for Days 1–5 (return in Dublin on Day 5). Dublin city is very walkable; taxis and Ubers work well for the wedding weekend. No need for a car once you're back in the city.</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- MAP CTA -->
+<div class="map-cta">
+  <h2>View on Google Maps</h2>
+  <p>See the full route and all stops plotted on an interactive map — useful for planning driving times and distances.</p>
+  <a class="map-btn" href="https://www.google.com/maps/dir/Dublin+Airport,+Ireland/Galway,+Ireland/Connemara+National+Park,+Letterfrack,+Ireland/Cliffs+of+Moher,+Ireland/Doolin,+Ireland/The+Burren,+Ireland/Killarney,+Ireland/Kenmare,+Ireland/Dingle,+Ireland/Dublin,+Ireland" target="_blank">Open Route in Google Maps</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Ireland · September 5–13, 2025</strong><br>
+  Dublin → Galway → Connemara → Cliffs of Moher → Doolin → The Burren → Killarney → Kenmare → Dingle → Dublin<br><br>
+  Proposed itinerary for four travellers · Subject to change · Share freely
+</footer>
+
+<script>
+  // Scroll animation for day cards
+  const cards = document.querySelectorAll('.day-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  cards.forEach(c => observer.observe(c));
+
+  // Nav active state
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  // Update nav on scroll
+  const sections = ['overview', 'itinerary', 'food', 'hikes', 'practical'];
+  window.addEventListener('scroll', () => {
+    let current = 'overview';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    document.querySelectorAll('.nav-pill').forEach((p, i) => {
+      p.classList.toggle('active', sections[i] === current);
+    });
+  });
+</script>
+
+</body>
+</html>
